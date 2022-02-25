@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- SCRIPTS -->
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+        <!-- Title -->
+        <title>Jeff Purity Test</title>
+        
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="http://d2jz71s5ipgn8z.cloudfront.net/20160524mylhvToIpZ/dist/img/favicons/apple-touch-icon-60x60.png">
+
+        <!-- Style -->
+        <style>
+            
+        html {
+            background-color: #FBEEC8;
+            background-image: url("owl.png");
+        }
+        
+        body {
+            text-align: center;
+        }
+        #list {
+            text-align: left;
+        }
+        h1 {
+            font-size: 300%;
+            font-weight: bold;
+            color: red;
+            padding:0px;
+            margin:0px;
+        }
+        
+        .button {
+            text-align: center;
+            width: 10%;
+            border-radius: 20px;
+            background-color: rgba(255, 119, 100, 0.3);
+            color: rgb(0, 0, 5);
+            position: relative;
+            left: 200px;
+        }
+
+        
+        </style>
+    </head>
+    
+    <body>
+        <p>
+            <p><img src="thresherOfficial.png" width="600" height="111"></p>
+            <div id="toHide">
+                <p><i>Are you like Jeffrey Ha? Take this quiz to find out.</i></p>
+                <p><strong>Caution: This is not a bucket list. Completion of all items on this test will likely result in blacking out or death.</strong></p>
+                <br />
+                Click on every item you have done. 
+        </p>
+            <div id="list">
+                <ol>
+                    <li> <input type="checkbox" id="1"> Viet
+                    <li> <input type="checkbox" id="2"> Halfie 
+                    <li> <input type="checkbox" id="3"> Rave slave
+                    <li> <input type="checkbox" id="4"> Boba addiction
+                    <li> <input type="checkbox" id="5"> Tattoo
+                    <li> <input type="checkbox" id="6"> Bad driver
+                    <li> <input type="checkbox" id="7"> Alcoholic 
+                    <li> <input type="checkbox" id="8"> Druggie
+                    <li> <input type="checkbox" id="9"> Late to everything
+                    <li> <input type="checkbox" id="10"> Easily distracted
+                    <li> <input type="checkbox" id="11"> Plays league
+                    <li> <input type="checkbox" id="12"> Talks to Siri too much (should talk to real women instead)
+                    <li> <input type="checkbox" id="13"> Stupid
+                    <li> <input type="checkbox" id="14"> Had a perm before
+                    <li> <input type="checkbox" id="15"> Cs major
+                    <li> <input type="checkbox" id="16"> Hennessy bottles in his apartment
+                    <li> <input type="checkbox" id="17"> Drives a Lexus
+                    <li> <input type="checkbox" id="18"> Gaslight
+                    <li> <input type="checkbox" id="19"> Likes men
+                    <li> <input type="checkbox" id="20"> Flakes
+                    <li> <input type="checkbox" id="21"> Loud
+                    <li> <input type="checkbox" id="22"> Sus
+                    <li> <input type="checkbox" id="23"> Irresponsible
+                    <li> <input type="checkbox" id="24"> Financial bad decisions
+                    <li> <input type="checkbox" id="25"> Cant cook
+                    <li> <input type="checkbox" id="26"> Inconsiderate
+                    <li> <input type="checkbox" id="27"> In VSA
+                    <li> <input type="checkbox" id="28"> Working at META
+                    <li> <input type="checkbox" id="29"> skips gym day
+                    <li> <input type="checkbox" id="30"> Toxic
+                    <li> <input type="checkbox" id="31"> Bad sleep schedule
+                    <li> <input type="checkbox" id="32"> Doesn’t go to class
+                    <li> <input type="checkbox" id="33"> Terrible priorities 
+                    <li> <input type="checkbox" id="34"> Racist
+                    <li> <input type="checkbox" id="35"> Sexist
+                    <li> <input type="checkbox" id="36"> Homophobic
+                    <li> <input type="checkbox" id="37"> Always gets distracted doing abs 
+                    <li> <input type="checkbox" id="38"> Says yes to everything 
+                    <li> <input type="checkbox" id="39"> Horny 
+                    <li> <input type="checkbox" id="40"> Bad eyesight
+                    <li> <input type="checkbox" id="41"> Sucks at league 
+                    <li> <input type="checkbox" id="42"> Instigator 
+                    <li> <input type="checkbox" id="43"> The way he says cap
+                    <li> <input type="checkbox" id="44"> Covid patient 2x
+                    <li> <input type="checkbox" id="45"> Lost phone while rolling 
+                    <li> <input type="checkbox" id="46"> Cracked phone multiple times
+                    <li> <input type="checkbox" id="47"> Gets boba so much cashier knows his name
+                    <li> <input type="checkbox" id="48"> Immature 
+                    <li> <input type="checkbox" id="49"> Looks young (not 21+)
+                    <li> <input type="checkbox" id="50"> Doesn’t attend ACM meetings
+                </ol>
+
+                <input class="button" id="submit" type="submit" value="Calculate My Score!">
+                <input class="button" id="reset" type="submit" value="Clear checkboxes">
+            </div>
+        </div> <!-- id = toHide -->
+        <div id = "toShow">
+            <h2 id="test">Your score:</h2>
+            <h1 id="score"></h1>
+        </div> <!-- id = toShow -->
+        
+         <script>
+        // IDs
+        // toHide: Everything that needs to be hidden when score is shown
+        // toShow: Everything that needs to be shown when score is shown
+        // score: h1 that shows the score
+        
+        // Initially hides results
+        $("#toShow").hide();
+
+        // Pre-calcuate the individual send order
+        function shuffle(array) {
+             var currentIndex = array.length, temporaryValue, randomIndex;
+             // While there remain elements to shuffle...
+             while (0 !== currentIndex) {
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                // And swap it with the current element.
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+             }
+
+            return array;
+        }
+
+        const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50];
+        const order = shuffle(nums);
+
+        // On click of the submit button: 
+        $('#submit').click(function() {
+            // Calculates purity
+            var sinList = document.querySelectorAll('input[type="checkbox"]:checked');
+            var sins = sinList.length;
+            var purity = 50-sins;
+
+            // Shows the score in the h1
+            $('#score').html(purity);
+            
+            // Shows the score and hides the checks
+            $("#toShow").show();
+            $("#toHide").hide();
+        });
+        
+        // On click of the reset button: 
+        $('#reset').click(function() {
+            $('input:checkbox').removeAttr('checked');
+        });
+        </script>
+
+    </body>
+</html>
+ 
